@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Flex } from "antd";
 // import { useAuth } from "@/hooks";
 import { SidebarCollapseTrigger } from "./SidebarCollapseTrigger";
 // import { MyAccountDropdown } from "./MyAccountDropdown";
+import { WEB_ROUTES } from "@/constants";
 
 export const Navbar: React.FC = () => {
   // const { userName } = useAuth();
@@ -17,8 +19,10 @@ export const Navbar: React.FC = () => {
         <SidebarCollapseTrigger />
       </div>
 
-      <Flex justify="end" gap="5">
-        <></>
+      <Flex className="w-full !pr-5" justify="end" gap="5">
+        <Link to={WEB_ROUTES.AUTH.SIGNIN} className="!text-sm !text-red-600">
+          Sign Out
+        </Link>
         {/* <MyAccountDropdown userName={"John Doe"} /> */}
       </Flex>
     </Flex>

@@ -1,18 +1,23 @@
 import React from "react";
 import { Form, Input, Button, Flex, type FormProps } from "antd";
 import { Link } from "react-router-dom";
+import { useAuthService } from "@/services";
 import { WEB_ROUTES } from "@/constants";
 import { type SigninCredentials } from "@/types/auth";
 
 export const SigninForm: React.FC = () => {
+  const { signinCredentials } = useAuthService();
   const [form] = Form.useForm();
+  const [loading, setLoading] = React.useState<boolean>(false);
 
-  const handleFormSubmit: FormProps<SigninCredentials>["onFinish"] = (values) => {
-    console.log(values);
+  const handleFormSubmit: FormProps<SigninCredentials>["onFinish"] = async (values) => {
+    console.log("signin credentials=", values);
+    setLoading(true);
+    return await signinCredentials(values, setLoading);
   };
 
   return (
-    <Form form={form} onFinish={handleFormSubmit} layout="vertical">
+    <Form form={form} onFinish={handleFormSubmit} disabled={loading} layout="vertical">
       <Form.Item
         label="E-mail"
         name="email"
