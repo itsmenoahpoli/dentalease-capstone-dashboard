@@ -9,7 +9,7 @@ const WEB_ROUTES = {
     REQUEST_OTP: AUTH_PREFIX + "/request-otp",
   },
   DASHBOARD: {
-    NEPHROLOGIST_OVERVIEW: DASHBOARD_PREFIX + "/nephrologist/overview",
+    OVERVIEW: DASHBOARD_PREFIX + "/",
   },
 } as const;
 

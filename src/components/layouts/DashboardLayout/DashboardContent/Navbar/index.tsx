@@ -13,11 +13,12 @@ export const Navbar: React.FC = () => {
       align="center"
       justify="between"
     >
-      <div>
+      <div className="pl-5">
         <SidebarCollapseTrigger />
       </div>
 
       <Flex justify="end" gap="5">
+        <></>
         {/* <MyAccountDropdown userName={"John Doe"} /> */}
       </Flex>
     </Flex>

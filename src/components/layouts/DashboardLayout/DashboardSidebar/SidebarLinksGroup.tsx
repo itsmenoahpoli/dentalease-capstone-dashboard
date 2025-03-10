@@ -24,7 +24,7 @@ export const SidebarLinksGroup: React.FC<{
   };
 
   return (
-    <Flex gap="2" justify="center" className="mb-3" vertical>
+    <Flex gap="2" justify="center" className="!mt-5 mb-3" vertical>
       <small
         className={`${
           props.hideLabels ? "text-[10px] text-center" : "text-[10px]"

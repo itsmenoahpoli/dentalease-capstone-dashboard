@@ -1,9 +1,11 @@
-export const SIDEBAR_ITEMS = [
+import { type SidebarGroup } from "@/types/layout";
+
+export const SIDEBAR_ITEMS: SidebarGroup[] = [
   {
-    group: "Manage",
+    group: "Manage Data",
     children: [
       {
-        label: "Services",
+        label: "Offered Services",
         url: "",
       },
       {

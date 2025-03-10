@@ -26,7 +26,7 @@ export const SidebarButton: React.FC<{
   return (
     // <Tooltip content={props.data.label} hidden={!sidebarCollapsed}>
     <button
-      className="flex flex-row items-center gap-x-2 hover:bg-slate-500 !hover:text-white cursor-pointer rounded-lg p-2"
+      className="flex flex-row items-center gap-x-2 hover:bg-slate-500 !hover:text-white cursor-pointer rounded-lg px-2 py-4"
       onClick={() => props.handleClickItem(props.data.url)}
     >
       <div className={`${props.hideLabels ? "w-full flex justify-center" : ""}`}>

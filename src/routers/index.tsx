@@ -1,11 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AuthLayout, DashboardLayout } from "@/components";
-import {
-  ErrorPage,
-  SigninPage,
-  RequestOtpPage,
-  NephrologistDashboard,
-} from "@/views";
+import { ErrorPage, SigninPage, RequestOtpPage, OverviewPage } from "@/views";
 import { WEB_ROUTES } from "@/constants";
 
 const router = createBrowserRouter([
@@ -36,8 +31,8 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: WEB_ROUTES.DASHBOARD.NEPHROLOGIST_OVERVIEW,
-        element: <NephrologistDashboard.OverviewPage />,
+        path: WEB_ROUTES.DASHBOARD.OVERVIEW,
+        element: <OverviewPage />,
       },
     ],
   },

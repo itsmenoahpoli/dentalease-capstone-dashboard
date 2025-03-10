@@ -12,10 +12,6 @@ export const SigninPage = React.lazy(() => import("./auth/SigninPage"));
 export const RequestOtpPage = React.lazy(() => import("./auth/RequestOtpPage"));
 
 /**
- * Nephrologist pages
+ * Dashboard pages
  */
-export const NephrologistDashboard = {
-  OverviewPage: React.lazy(
-    () => import("./dashboard/nephrologist/OverviewPage")
-  ),
-};
+export const OverviewPage = React.lazy(() => import("./dashboard/nephrologist/OverviewPage"));

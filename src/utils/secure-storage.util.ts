@@ -11,9 +11,13 @@ export const SECURE_STORAGE = {
     return encrypted;
   },
   decryptData(encrypted: string) {
-    const bytes = CryptoJS.AES.decrypt(encrypted, SETTINGS.SECRET_PASSKEY);
-    const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    try {
+      const bytes = CryptoJS.AES.decrypt(encrypted, SETTINGS.SECRET_PASSKEY);
+      const decrypted = bytes.toString(CryptoJS.enc.Utf8);
 
-    return JSON.parse(decrypted);
+      return JSON.parse(decrypted);
+    } catch (error) {
+      return null;
+    }
   },
 };
