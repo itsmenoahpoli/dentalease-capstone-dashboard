@@ -8,6 +8,7 @@ import {
   Truck,
   Settings,
 } from "lucide-react";
+import { WEB_ROUTES } from "@/constants";
 import { type SidebarGroup } from "@/types/layout";
 
 const ICON_SIZE = 22;
@@ -19,12 +20,12 @@ export const SIDEBAR_ITEMS: SidebarGroup[] = [
       {
         icon: <Home color="white" size={ICON_SIZE} />,
         label: "Dashboard Overview",
-        url: "",
+        url: WEB_ROUTES.DASHBOARD.OVERVIEW,
       },
       {
         icon: <ListCheck color="white" size={ICON_SIZE} />,
         label: "Offered Services",
-        url: "",
+        url: WEB_ROUTES.DASHBOARD.OFFERED_SERVICES,
       },
       {
         icon: <CalendarCheck color="white" size={ICON_SIZE} />,

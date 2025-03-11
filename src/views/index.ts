@@ -15,3 +15,10 @@ export const RequestOtpPage = React.lazy(() => import("./auth/RequestOtpPage"));
  * Dashboard pages
  */
 export const OverviewPage = React.lazy(() => import("./dashboard/OverviewPage"));
+
+/**
+ * Offered services pages
+ */
+export const OfferedServicesListPage = React.lazy(
+  () => import("./dashboard/offered-services/OfferedServicesListPage")
+);

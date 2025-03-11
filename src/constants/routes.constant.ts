@@ -10,6 +10,7 @@ const WEB_ROUTES = {
   },
   DASHBOARD: {
     OVERVIEW: DASHBOARD_PREFIX + "/",
+    OFFERED_SERVICES: DASHBOARD_PREFIX + "/offered-services",
   },
 } as const;
 

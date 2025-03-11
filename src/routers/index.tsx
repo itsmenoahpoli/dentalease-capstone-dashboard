@@ -1,6 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AuthLayout, DashboardLayout } from "@/components";
-import { ErrorPage, SigninPage, RequestOtpPage, OverviewPage } from "@/views";
+import {
+  ErrorPage,
+  SigninPage,
+  RequestOtpPage,
+  OverviewPage,
+  OfferedServicesListPage,
+} from "@/views";
 import { WEB_ROUTES } from "@/constants";
 
 const router = createBrowserRouter([
@@ -33,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: WEB_ROUTES.DASHBOARD.OVERVIEW,
         element: <OverviewPage />,
+      },
+      {
+        path: WEB_ROUTES.DASHBOARD.OFFERED_SERVICES,
+        element: <OfferedServicesListPage />,
       },
     ],
   },
