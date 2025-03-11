@@ -35,7 +35,7 @@ export const SIDEBAR_ITEMS: SidebarGroup[] = [
       {
         icon: <CalendarCheck color="white" size={ICON_SIZE} />,
         label: "Appointments",
-        url: "",
+        url: WEB_ROUTES.DASHBOARD.APPOINTMENTS,
       },
       {
         icon: <FileAxis3D color="white" size={ICON_SIZE} />,

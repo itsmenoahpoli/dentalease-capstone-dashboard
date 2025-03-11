@@ -29,3 +29,10 @@ export const OfferedServicesListPage = React.lazy(
 export const PatientProfilesListPage = React.lazy(
   () => import("./dashboard/patients/PatientProfilesListPage")
 );
+
+/**
+ * Appointments pages
+ */
+export const AppointmentsListPage = React.lazy(
+  () => import("./dashboard/appointments/AppointmentsListPage")
+);
