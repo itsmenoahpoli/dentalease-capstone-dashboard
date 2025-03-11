@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Avatar, DropdownMenu } from "@radix-ui/themes";
-// import { AppSignoutButton } from "@/components";
-import { WEB_ROUTES } from "@/constants";
+import { Dropdown, Avatar, Menu } from "antd";
+// import { WEB_ROUTES } from "@/constants";
 import { FORMATTERS } from "@/utils";
 
-export const MyAccountDropdown: React.FC<{ userName: string }> = (props) => {
+export const MyAccountDropdown: React.FC<{ userName: string }> = ({ userName }) => {
   const navigate = useNavigate();
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleDropdownOpen = (isOpen: boolean) => {
     setOpen(isOpen);
@@ -18,29 +17,29 @@ export const MyAccountDropdown: React.FC<{ userName: string }> = (props) => {
     navigate(url);
   };
 
+  const menuItems = (
+    <Menu>
+      <Menu.Item key="account" onClick={() => handleNavigate("/")}>
+        My Account
+      </Menu.Item>
+      <Menu.Item key="change-password" onClick={() => handleNavigate("/")}>
+        Change Password
+      </Menu.Item>
+      <Menu.Item key="session-logs" onClick={() => handleNavigate("/")}>
+        Session Logs
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="signout" danger>
+        Sign Out
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
-    <></>
-    // <DropdownMenu.Root open={open} onOpenChange={setOpen}>
-    //   <DropdownMenu.Trigger>
-    //     <button onClick={() => handleDropdownOpen(true)}>
-    //       <Avatar size="3" radius="full" fallback={FORMATTERS.getInitials(props.userName)} />
-    //     </button>
-    //   </DropdownMenu.Trigger>
-    //   <DropdownMenu.Content>
-    //     <DropdownMenu.Item onClick={() => handleNavigate(WEB_ROUTES.DASHBOARD_MY_ACCOUNT)}>
-    //       My Account
-    //     </DropdownMenu.Item>
-    //     <DropdownMenu.Item onClick={() => handleNavigate(WEB_ROUTES.DASHBOARD_CHANGE_PASSWORD)}>
-    //       Change Password
-    //     </DropdownMenu.Item>
-    //     <DropdownMenu.Item onClick={() => handleNavigate(WEB_ROUTES.DASHBOARD_SESSION_LOGS)}>
-    //       Session Logs
-    //     </DropdownMenu.Item>
-    //     <DropdownMenu.Separator />
-    //     <DropdownMenu.Item color="red" onSelect={(e) => e.preventDefault()}>
-    //       <AppSignoutButton handleDropdownOpen={handleDropdownOpen} />
-    //     </DropdownMenu.Item>
-    //   </DropdownMenu.Content>
-    // </DropdownMenu.Root>
+    <Dropdown overlay={menuItems} trigger={["click"]} onOpenChange={handleDropdownOpen} open={open}>
+      <Avatar size={40} className="!bg-[darkorange] !cursor-pointer !font-medium">
+        {FORMATTERS.getInitials(userName)}
+      </Avatar>
+    </Dropdown>
   );
 };

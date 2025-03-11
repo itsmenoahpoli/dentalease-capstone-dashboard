@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
-// import { useLayout } from "@/hooks";
+import { Tooltip } from "antd";
+import { useLayout } from "@/hooks";
 import { type SidebarGroupSubItems } from "@/types/layout";
 
 const CollapseIcon: React.FC<{ isCollapsed: boolean }> = (props) => {
@@ -21,24 +22,28 @@ export const SidebarButton: React.FC<{
   hideLabels?: boolean;
   asDropdown?: boolean;
 }> = (props) => {
-  // const { sidebarCollapsed } = useLayout();
+  const { sidebarCollapsed } = useLayout();
 
   return (
-    // <Tooltip content={props.data.label} hidden={!sidebarCollapsed}>
-    <button
-      className="flex flex-row items-center gap-x-2 hover:bg-slate-500 !hover:text-white cursor-pointer rounded-lg px-2 py-4"
-      onClick={() => props.handleClickItem(props.data.url)}
+    <Tooltip
+      title={props.data.label}
+      placement="right"
+      style={{ display: !sidebarCollapsed ? "none" : "block" }}
     >
-      <div className={`${props.hideLabels ? "w-full flex justify-center" : ""}`}>
-        {props.data.icon}
-      </div>
+      <button
+        className="flex flex-row items-center gap-x-2 hover:bg-slate-700 !hover:text-white cursor-pointer rounded px-2 py-2"
+        onClick={() => props.handleClickItem(props.data.url)}
+      >
+        <div className={`${props.hideLabels ? "w-full flex justify-center" : ""}`}>
+          {props.data.icon}
+        </div>
 
-      {props.hideLabels ? null : <p className="text-xs text-white">{props.data.label}</p>}
+        {props.hideLabels ? null : <p className="text-xs text-white">{props.data.label}</p>}
 
-      {props.data.children?.length && props.toggled !== undefined ? (
-        <CollapseIcon isCollapsed={props.toggled} />
-      ) : null}
-    </button>
-    // </Tooltip>
+        {props.data.children?.length && props.toggled !== undefined ? (
+          <CollapseIcon isCollapsed={props.toggled} />
+        ) : null}
+      </button>
+    </Tooltip>
   );
 };

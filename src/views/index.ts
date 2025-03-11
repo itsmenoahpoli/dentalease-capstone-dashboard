@@ -14,4 +14,4 @@ export const RequestOtpPage = React.lazy(() => import("./auth/RequestOtpPage"));
 /**
  * Dashboard pages
  */
-export const OverviewPage = React.lazy(() => import("./dashboard/nephrologist/OverviewPage"));
+export const OverviewPage = React.lazy(() => import("./dashboard/OverviewPage"));

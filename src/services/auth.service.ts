@@ -20,10 +20,6 @@ export const useAuthService = () => {
       .then((response) => {
         const { session, token, user } = response.data;
 
-        // if (!account_enabled) {
-        //   return alert("Sorry, your account is disabled");
-        // }
-
         setAuthData({
           session,
           token,

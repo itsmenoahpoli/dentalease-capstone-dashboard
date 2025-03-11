@@ -13,7 +13,7 @@ export const AppLoader: React.FC = () => {
       style={{ background: "rgba(255, 255, 255, 0.85)" }}
       vertical
     >
-      <img src={ASSETS.CURAKIDNEY_TRANSPARENT_LOGO} height="250" width="250" />
+      <img src={ASSETS.BRAND_LOGO} height="250" width="250" />
       <Spinner />
     </Flex>
   );

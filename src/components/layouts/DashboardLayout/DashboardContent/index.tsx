@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Flex } from "antd";
 import { useLayout } from "@/hooks";
-// import { AppBreadcrumbs } from "@/components/app/AppBreadcrumbs";
 import { Navbar } from "./Navbar";
 
 export const DashboardContent: React.FC<PropsWithChildren> = React.memo((props) => {
@@ -15,8 +14,8 @@ export const DashboardContent: React.FC<PropsWithChildren> = React.memo((props) 
     >
       <Navbar />
 
-      <Flex gap="1" className="h-full px-4 pt-2" style={{ zoom: 0.895 }} vertical>
-        <div className="!pb-[80px]">{props.children}</div>
+      <Flex gap="1" className="h-full" style={{ zoom: 0.895 }} vertical>
+        <div className="!p-6 !pb-[80px]">{props.children}</div>
       </Flex>
     </div>
   );

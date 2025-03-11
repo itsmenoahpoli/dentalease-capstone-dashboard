@@ -1,63 +1,58 @@
+import {
+  Home,
+  ListCheck,
+  CalendarCheck,
+  Users2,
+  FileAxis3D,
+  FileBadge,
+  Truck,
+  Settings,
+} from "lucide-react";
 import { type SidebarGroup } from "@/types/layout";
+
+const ICON_SIZE = 22;
 
 export const SIDEBAR_ITEMS: SidebarGroup[] = [
   {
-    group: "Manage Data",
+    group: "Manage",
     children: [
       {
+        icon: <Home color="white" size={ICON_SIZE} />,
+        label: "Dashboard Overview",
+        url: "",
+      },
+      {
+        icon: <ListCheck color="white" size={ICON_SIZE} />,
         label: "Offered Services",
         url: "",
       },
       {
+        icon: <CalendarCheck color="white" size={ICON_SIZE} />,
         label: "Appointments",
         url: "",
       },
       {
+        icon: <Users2 color="white" size={ICON_SIZE} />,
         label: "Patient Records",
         url: "",
       },
       {
+        icon: <FileAxis3D color="white" size={ICON_SIZE} />,
         label: "Prescriptions (Digital)",
         url: "",
       },
       {
+        icon: <FileBadge color="white" size={ICON_SIZE} />,
         label: "Billings & Payments",
-        url: "",
-        // children: [
-        //   {
-        //     label: "Digital Billing Solutions",
-        //     url: "",
-        //   },
-        //   {
-        //     label: "Payment Collections",
-        //     url: "",
-        //   },
-        //   {
-        //     label: "Generate Invoices & Receipts",
-        //     url: "",
-        //   },
-        //   {
-        //     label: "Track Payment Status",
-        //     url: "",
-        //   },
-        // ],
       },
       {
+        icon: <Truck color="white" size={ICON_SIZE} />,
         label: "Inventory",
         url: "",
-        // children: [
-        //   {
-        //     label: "Inventory Tracking",
-        //     url: "",
-        //   },
-        //   {
-        //     label: "Supply Re-stocking",
-        //     url: "",
-        //   },
-        // ],
       },
       {
-        label: "CMS",
+        icon: <Settings color="white" size={ICON_SIZE} />,
+        label: "Content Management",
         url: "",
       },
     ],
