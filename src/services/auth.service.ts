@@ -40,7 +40,13 @@ export const useAuthService = () => {
       });
   };
 
+  const signoutUser = () => {
+    localStorage.clear();
+    navigate(WEB_ROUTES.AUTH.SIGNIN);
+  };
+
   return {
     signinCredentials,
+    signoutUser,
   };
 };

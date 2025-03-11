@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dropdown, Avatar, Menu } from "antd";
-// import { WEB_ROUTES } from "@/constants";
+import { useAuthService } from "@/services";
 import { FORMATTERS } from "@/utils";
 
 export const MyAccountDropdown: React.FC<{ userName: string }> = ({ userName }) => {
   const navigate = useNavigate();
+  const { signoutUser } = useAuthService();
   const [open, setOpen] = useState<boolean>(false);
 
   const handleDropdownOpen = (isOpen: boolean) => {
@@ -15,6 +16,10 @@ export const MyAccountDropdown: React.FC<{ userName: string }> = ({ userName }) 
   const handleNavigate = (url: string) => {
     handleDropdownOpen(false);
     navigate(url);
+  };
+
+  const handleSignout = () => {
+    signoutUser();
   };
 
   const menuItems = (
@@ -29,7 +34,7 @@ export const MyAccountDropdown: React.FC<{ userName: string }> = ({ userName }) 
         Session Logs
       </Menu.Item>
       <Menu.Divider />
-      <Menu.Item key="signout" danger>
+      <Menu.Item key="signout" onClick={handleSignout} danger>
         Sign Out
       </Menu.Item>
     </Menu>
