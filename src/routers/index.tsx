@@ -6,6 +6,7 @@ import {
   RequestOtpPage,
   OverviewPage,
   OfferedServicesListPage,
+  PatientProfilesListPage,
 } from "@/views";
 import { WEB_ROUTES } from "@/constants";
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: WEB_ROUTES.DASHBOARD.OFFERED_SERVICES,
         element: <OfferedServicesListPage />,
+      },
+      {
+        path: WEB_ROUTES.DASHBOARD.PATIENT_PROFILES,
+        element: <PatientProfilesListPage />,
       },
     ],
   },

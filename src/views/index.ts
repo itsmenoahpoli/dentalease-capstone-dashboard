@@ -22,3 +22,10 @@ export const OverviewPage = React.lazy(() => import("./dashboard/OverviewPage"))
 export const OfferedServicesListPage = React.lazy(
   () => import("./dashboard/offered-services/OfferedServicesListPage")
 );
+
+/**
+ * Patients management pages
+ */
+export const PatientProfilesListPage = React.lazy(
+  () => import("./dashboard/patients/PatientProfilesListPage")
+);

@@ -28,13 +28,13 @@ export const SIDEBAR_ITEMS: SidebarGroup[] = [
         url: WEB_ROUTES.DASHBOARD.OFFERED_SERVICES,
       },
       {
-        icon: <CalendarCheck color="white" size={ICON_SIZE} />,
-        label: "Appointments",
-        url: "",
+        icon: <Users2 color="white" size={ICON_SIZE} />,
+        label: "Patient Profiles",
+        url: WEB_ROUTES.DASHBOARD.PATIENT_PROFILES,
       },
       {
-        icon: <Users2 color="white" size={ICON_SIZE} />,
-        label: "Patient Records",
+        icon: <CalendarCheck color="white" size={ICON_SIZE} />,
+        label: "Appointments",
         url: "",
       },
       {
